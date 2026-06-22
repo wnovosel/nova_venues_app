@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  ios/ExportOptions-brew32.plist
+  Used by: flutter build ipa - -flavor brew32
+-->
+<plist version="1.0">
+<dict>
+    <key>destination</key>
+    <string>export</string>
+    <key>method</key>
+    <string>app-store</string>
+    <key>teamID</key>
+    <string>S9687U7PPC</string>
+    <key>uploadBitcode</key>
+    <false/>
+    <key>uploadSymbols</key>
+    <true/>
+    <key>signingStyle</key>
+    <string>automatic</string>
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.novavenues.brew32</key>
+        <string>Brew 32 App Store</string>
+    </dict>
+</dict>
+</plist>

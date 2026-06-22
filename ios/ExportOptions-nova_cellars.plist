@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  ios/ExportOptions-nova_cellars.plist
+  Used by: flutter build ipa - -flavor nova_cellars
+  Update signingCertificate and provisioningProfiles when your cert renews.
+-->
+<plist version="1.0">
+<dict>
+    <key>destination</key>
+    <string>export</string>
+    <key>method</key>
+    <string>app-store</string>
+    <key>teamID</key>
+    <string>S9687U7PPC</string>
+    <key>uploadBitcode</key>
+    <false/>
+    <key>uploadSymbols</key>
+    <true/>
+    <key>signingStyle</key>
+    <string>automatic</string>
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.novadestinations.wonder</key>
+        <string>Nova Destinations App Store</string>
+    </dict>
+</dict>
+</plist>

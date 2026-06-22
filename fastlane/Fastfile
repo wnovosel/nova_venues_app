@@ -1,0 +1,94 @@
+# fastlane/Fastfile
+# Automates build + TestFlight submission for each venue flavor.
+#
+# Usage:
+#   fastlane ios build_nova_cellars       # build only
+#   fastlane ios submit_nova_cellars      # build + upload to TestFlight
+#   fastlane ios submit_brew32
+#
+# Add a new venue: copy a lane pair, change flavor/bundle_id/entry_point/app_id.
+
+default_platform(:ios)
+
+# ── Shared helpers ─────────────────────────────────────────────────────────────
+
+def flutter_build(flavor:, entry:)
+  sh "flutter build ipa " \
+     "--flavor #{flavor} " \
+     "-t lib/#{entry} " \
+     "--release " \
+     "--export-options-plist=ios/ExportOptions-#{flavor}.plist"
+end
+
+def upload_to_tf(app_id:, ipa_path:)
+  upload_to_testflight(
+    api_key_path:     "fastlane/api_key.json",   # App Store Connect API key
+    app_identifier:   app_id,
+    ipa:              ipa_path,
+    skip_waiting_for_build_processing: true,
+    notify_external_testers: false,
+  )
+end
+
+# ── Nova Cellars / Nova Destinations ─────────────────────────────────────────
+
+platform :ios do
+  lane :build_nova_cellars do
+    flutter_build(flavor: "nova_cellars", entry: "main_nova_cellars.dart")
+  end
+
+  lane :submit_nova_cellars do
+    flutter_build(flavor: "nova_cellars", entry: "main_nova_cellars.dart")
+    upload_to_tf(
+      app_id:   "com.novadestinations.wonder",
+      ipa_path: "build/ios/ipa/Runner.ipa",
+    )
+  end
+
+  # ── Brew 32 ────────────────────────────────────────────────────────────────
+
+  lane :build_brew32 do
+    flutter_build(flavor: "brew32", entry: "main_brew32.dart")
+  end
+
+  lane :submit_brew32 do
+    flutter_build(flavor: "brew32", entry: "main_brew32.dart")
+    upload_to_tf(
+      app_id:   "com.novavenues.brew32",
+      ipa_path: "build/ios/ipa/Runner.ipa",
+    )
+  end
+
+  # ── TEMPLATE: add new venues here ─────────────────────────────────────────
+  # lane :submit_knockin_noggin do
+  #   flutter_build(flavor: "knockin_noggin", entry: "main_knockin_noggin.dart")
+  #   upload_to_tf(
+  #     app_id:   "com.novavenues.knockinnoggin",
+  #     ipa_path: "build/ios/ipa/Runner.ipa",
+  #   )
+  # end
+end
+
+# ── Android ───────────────────────────────────────────────────────────────────
+
+platform :android do
+  lane :submit_nova_cellars do
+    gradle(task: "bundle", flavor: "nova_cellars", build_type: "Release")
+    upload_to_play_store(
+      package_name: "com.novadestinations.wonder",
+      aab:          "android/app/build/outputs/bundle/nova_cellarsRelease/app-nova_cellars-release.aab",
+      track:        "internal",
+      json_key:     "fastlane/play_store_key.json",
+    )
+  end
+
+  lane :submit_brew32 do
+    gradle(task: "bundle", flavor: "brew32", build_type: "Release")
+    upload_to_play_store(
+      package_name: "com.novavenues.brew32",
+      aab:          "android/app/build/outputs/bundle/brew32Release/app-brew32-release.aab",
+      track:        "internal",
+      json_key:     "fastlane/play_store_key.json",
+    )
+  end
+end
