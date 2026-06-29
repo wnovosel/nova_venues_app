@@ -24,35 +24,37 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>maps</string>
+		<string>comgooglemaps</string>
+		<string>mailto</string>
+		<string>https</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-
-	<!-- Permissions — only camera/location needed for venues app -->
 	<key>NSCameraUsageDescription</key>
 	<string>$(APP_DISPLAY_NAME) uses your camera to scan QR codes.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>$(APP_DISPLAY_NAME) uses your location to show nearby venues.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>$(APP_DISPLAY_NAME) uses your location to show nearby venues.</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Used to secure your account.</string>
-
-	<!-- Push notifications -->
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>$(APP_DISPLAY_NAME) uses your location to show nearby venues.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>$(APP_DISPLAY_NAME) uses your location to show nearby venues.</string>
 	<key>NSUserNotificationsUsageDescription</key>
 	<string>$(APP_DISPLAY_NAME) sends you event and offer notifications.</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
 		<string>remote-notification</string>
 	</array>
-
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIStatusBarHidden</key>
-	<false/>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -65,16 +67,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-
-	<key>ITSAppUsesNonExemptEncryption</key>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>maps</string>
-		<string>comgooglemaps</string>
-		<string>mailto</string>
-		<string>https</string>
-	</array>
 </dict>
 </plist>
