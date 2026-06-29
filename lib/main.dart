@@ -9,6 +9,8 @@ import 'screens/login_screen.dart';
 
 /// Entry point — receives the TenantConfig from the flavor file.
 /// Each flavor's main_<flavor>.dart calls this with its own config.
+void main() => runVenueApp(kNovaCellarsConfig);
+
 void runVenueApp(TenantConfig config) {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
