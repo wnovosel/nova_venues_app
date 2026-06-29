@@ -9,4 +9,6 @@ export PATH="$PATH:$HOME/flutter/bin"
 cd $CI_PRIMARY_REPOSITORY_PATH
 flutter pub get
 
-# Pods are committed — no pod install needed
+# Install pods fresh — ignore Podfile.lock conflicts
+cd ios
+pod install --allow-root
