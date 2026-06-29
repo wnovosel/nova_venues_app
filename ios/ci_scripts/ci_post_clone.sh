@@ -9,6 +9,9 @@ export PATH="$PATH:$HOME/flutter/bin"
 cd $CI_PRIMARY_REPOSITORY_PATH
 flutter pub get
 
-# Install pods fresh — ignore Podfile.lock conflicts
+# Cache iOS artifacts (required before pod install)
+flutter precache --ios
+
+# Install pods
 cd ios
-pod install --allow-root
+pod install
