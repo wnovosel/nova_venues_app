@@ -9,6 +9,6 @@ export PATH="$PATH:$HOME/flutter/bin"
 cd $CI_PRIMARY_REPOSITORY_PATH
 flutter pub get
 
-# Install pods
+# Install pods using Podfile.lock (no CDN lookup needed)
 cd ios
-pod install
+pod install --deployment
