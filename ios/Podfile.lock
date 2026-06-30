@@ -7,14 +7,11 @@ PODS:
     - Flutter
     - FlutterMacOS
     - PostHog (~> 3.22)
-  - url_launcher_ios (0.0.1):
-    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
   - posthog_flutter (from `.symlinks/plugins/posthog_flutter/ios`)
-  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
 
 SPEC REPOS:
   trunk:
@@ -27,15 +24,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_secure_storage/ios"
   posthog_flutter:
     :path: ".symlinks/plugins/posthog_flutter/ios"
-  url_launcher_ios:
-    :path: ".symlinks/plugins/url_launcher_ios/ios"
 
 SPEC CHECKSUMS:
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   flutter_secure_storage: 1ed9476fba7e7a782b22888f956cce43e2c62f13
   PostHog: 19450271dc3a2711dfaef157b53c5b6c068447b3
   posthog_flutter: 631ab870f7daf1ed190deeb2414eb3e347445f37
-  url_launcher_ios: 7a95fa5b60cc718a708b8f2966718e93db0cef1b
 
 PODFILE CHECKSUM: 925325d20e05a8bbfce919e0da669633c652835f
 
