@@ -6,6 +6,7 @@ import 'core/config/app_provider.dart';
 import 'core/theme/app_theme.dart';
 import 'screens/shell_screen.dart';
 import 'screens/login_screen.dart';
+import 'flavors/nova_cellars_config.dart';
 
 /// Entry point — receives the TenantConfig from the flavor file.
 /// Each flavor's main_<flavor>.dart calls this with its own config.
