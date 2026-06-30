@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../core/config/tenant_config.dart';
 import '../../core/config/app_provider.dart';
 import '../../core/theme/app_theme.dart';
@@ -123,10 +122,12 @@ class AccountScreen extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Links
-          _tile(theme, Icons.language_outlined, 'Website', () =>
-              launchUrl(Uri.parse(config.websiteUrl))),
-          _tile(theme, Icons.email_outlined, 'Contact Support', () =>
-              launchUrl(Uri.parse('mailto:${config.supportEmail}'))),
+          _tile(theme, Icons.language_outlined, 'Website', () {
+            // TODO: re-enable url_launcher once Xcode Cloud module resolution is fixed
+          }),
+          _tile(theme, Icons.email_outlined, 'Contact Support', () {
+            // TODO: re-enable url_launcher once Xcode Cloud module resolution is fixed
+          }),
 
           const SizedBox(height: 24),
 
